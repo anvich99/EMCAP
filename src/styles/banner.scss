@@ -1,0 +1,27 @@
+@import "mixin.scss";
+
+
+.main-banner{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    @include flex_colomn;
+    width: calc(1400 / 3 * 2);
+    &__subtitle{
+        @include font(1.25rem, 400, 1.5, #e5745d);
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    &__title{
+        @include font(4.375rem, 200, 1.2, #15403d);
+        font-family: 'Canela Trial';
+        text-align: center;
+        padding-left: 40px;
+        padding-right: 40px;
+        &-pink{
+            color: #15403d;
+            &:hover{
+                color: #e5745d;
+            }
+        }
+    }
+}

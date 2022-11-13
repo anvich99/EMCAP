@@ -1,0 +1,79 @@
+@import "mixin.scss";
+
+
+.header{
+    width: 100%;
+    &-block{
+        position: relative;
+        height: 125px;
+        width: 100%;
+        .header_toptext{
+            @include flex_row();
+            justify-content: flex-end;
+            align-items: baseline;
+            .header-block-content{
+                position: absolute;
+                padding-top: 10px;
+                .content__dotes{
+                    color: #e5745d;
+                    font-weight: 700;
+                    font-family: 'Canela Trial';
+                    font-size: 1.2rem;
+                    letter-spacing: 3px;
+                    margin-bottom: -10px;
+                }
+                .content-text{
+
+                    margin-right: 80px;
+                    &__link{
+                        @include font(19px, 300, 1.5,inherit);
+                        font-family: 'Canela Trial';
+                        text-align: right;
+                        position: relative;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        &-navigation{
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+
+            .header-navigation__menu{
+                @include flex_row();
+                // position: absolute;
+                height: 45px;
+                &-link{
+                    margin-right: 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    @include font(0.875rem, 500, 1.2, inherit);
+                    position: relative;
+                    padding-bottom: 2px;
+                    &:first-child{
+                        display: none;
+                    }
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    
+                    &::after{
+                        content: "";
+                        opacity: 0;
+                        width: 100%;
+                        border-bottom: 1px solid #e5745d;
+                        transition: opacity .3s ease-out;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                    }
+                    &:hover::after{
+                        opacity: 1;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

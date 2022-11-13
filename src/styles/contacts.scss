@@ -1,0 +1,195 @@
+@import "mixin.scss";
+
+.main-contacts{
+    margin-top: 120px;
+    &-item{
+        @include flex_row();
+        align-items: flex-start;
+        padding-right: 40px;
+        padding-left: 40px;
+        margin-bottom: 180px;
+        justify-content: flex-start;
+        &__photo{
+            padding-right: 120px;
+            position: relative;
+            .item-background-top{
+                @include background_top-light();
+                background-image: url(../images/pink-pattern-top.png);
+            }
+            .item-background-bottom{
+                @include background_bottom-light();
+                background-image: url(../images/green-pattern-bottom.png);
+            }
+            .item-portrait{
+                background-size: cover;
+                height: 550px;
+                position: relative;
+                z-index: 2;
+                width: 401px;
+            }
+        }
+        &-info{
+            @include flex_colomn();
+            align-items: flex-start;
+            padding-top: 60px;
+            padding-bottom: 60px;
+            max-width: 600px;
+            .item-info__logo{
+                margin-bottom: 30px;
+                height: 30px;
+            }
+            .main-contacts-item__text{
+                @include font(3.5rem, 200, 1.2, #15403d);
+                font-family: 'Canela Trial';
+                margin-bottom: 30px;
+                &-pink{
+                    color: #e5745d;
+                    &:hover{
+                        color: #67a582;;
+                    }
+                }
+            }
+            .main-contacts-item-info__button{
+                @include button(#15403d, white);
+            }
+            .main-contacts-item-info__button::after{
+                @include button_after(#e5745d,7px,7px,5px,5px);
+            }
+            .main-contacts-item-info__button::before{
+                @include button_before(#e5745d,5px,5px,7px,7px);
+            }
+            .main-contacts-item-info__button:hover{
+                @include button (white, #e5745d);
+            }
+            .main-contacts-item-info__button:hover::after{
+                @include button_after(white,7px,7px,5px,5px);
+            }
+            .main-contacts-item-info__button:hover::before{
+                @include button_before(white,5px,5px,7px,7px);
+            }
+
+            &__themes{
+                margin-top: 40px;
+                @include flex_colomn();
+                align-items: flex-start;
+                .item-info__themes__title{
+                    @include font(0.875rem, 500, 1.2, #e5745d);
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                    letter-spacing: 2px;
+                }
+                .item-info__themes__link{
+                    @include font(1rem, 400, 1.5, #15403d);
+                    padding-bottom: 2px;
+                    margin-bottom: 5px;
+                    position: relative;
+                    &:after{
+                        @include link__after();
+                    }
+                    &:before{
+                        @include link__before();
+                    }
+                }
+            }
+        }
+    }
+    &-dark{
+        @include flex_row();
+        align-items: flex-start;
+        padding-right: 40px;
+        padding-left: 40px;
+        padding-bottom: 80px;
+        margin-bottom: 180px;
+        position: relative;
+        z-index: 1;
+        justify-content: space-between;
+        &:after{
+            position: absolute;
+            background-color: #466684;
+            top: 0;
+            right: 120px;
+            width: 100vw;
+            z-index: -1;
+            content: '';
+            bottom: 0;
+        }
+        &__photo{
+            padding-left: 120px;
+            position: relative;
+            margin-top: -30px;
+            &::before{
+                @include background_top();
+                background-image: url(../images/blue-pattern-top.png);
+            }
+            .dark-background-bottom{
+                @include background_bottom();
+                background-image: url(../images/pink-pattern-bottom.png);
+            }
+            .dark-portrait{
+                background-size: cover;
+                height: 550px;
+                position: relative;
+            }
+        }
+        &-info{
+            @include flex_colomn();
+            align-items: flex-start;
+            padding-top: 60px;
+            padding-bottom: 60px;
+            max-width: 600px;
+            .main-contacts-dark__text{
+                @include font(3.5rem, 200, 1.2, white);
+                font-family: 'Canela Trial';
+                margin-bottom: 30px;
+                &-pink{
+                    color: #b5e4c9;
+                    &:hover{
+                        color: #ffb7a9;
+                    }
+                }
+            }
+            .main-contacts-dark-info__button{
+                @include button(white, #324f6b);
+            }
+            .main-contacts-dark-info__button::after{
+                @include button_after(#b5e4c9,7px,7px,5px,5px);
+            }
+            .main-contacts-dark-info__button::before{
+                @include button_before(#b5e4c9,5px,5px,7px,7px);
+            }
+            .main-contacts-dark-info__button:hover{
+                @include button (#324f6b, #b5e4c9);
+            }
+            .main-contacts-dark-info__button:hover::after{
+                @include button_after(#324f6b,7px,7px,5px,5px);
+            }
+            .main-contacts-dark-info__button:hover::before{
+                @include button_before(#324f6b,5px,5px,7px,7px);
+            }
+
+            &__themes{
+                margin-top: 40px;
+                @include flex_colomn();
+                align-items: flex-start;
+                .dark-info__themes__title{
+                    @include font(0.875rem, 500, 1.2, #b5e4c9);
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                    letter-spacing: 2px;
+                }
+                .dark-info__themes__link{
+                    @include font(1rem, 400, 1.5, white);
+                    padding-bottom: 2px;
+                    margin-bottom: 5px;
+                    position: relative;
+                    &:after{
+                        @include link__after();
+                    }
+                    &:before{
+                        @include link__before();
+                    }
+                }
+            }
+        }
+    }
+}

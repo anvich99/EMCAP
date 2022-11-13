@@ -1,0 +1,74 @@
+@import "mixin.scss";
+
+.main-specialization{
+    background-color: #15403d;
+    box-shadow: inset 0 -200px 0 #f9f4f1;
+    @include flex_colomn();
+    justify-content: center;
+    margin-bottom: 80px;
+    &-header{
+        @include flex_colomn();
+        padding-left: 40px;
+        padding-right: 40px;
+        //width: calc(1400/3 * 2);
+        margin-bottom: 60px;
+        .main-specialization__subtitle{
+            @include font(1.25rem,400, 1.5, #e5745d);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .main-specialization__title{
+            @include font(3.75rem, 200, 1.2, white);
+            font-family: 'Canela Trial';
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .main-specialization__text{
+            @include font (1.125rem, 300,1.5, white );
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+    &-cards{
+        @include flex_colomn();
+        .specialization-item{
+            padding-left: 40px;
+            padding-right: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            
+            &-link{
+                @include flex_row;
+                background-color: #fff;
+                padding: 80px;
+                position: relative;
+                box-shadow:  5px 5px 10px rgb(0 0 0 / 10%), 5px 20px 40px rgb(0 0 0 / 20%);
+                &:after{
+                    @include button_after(#e5745d,20px,20px,22px,22px);
+                }
+                &:before{
+                    @include button_before(#e5745d,22px,22px,20px,20px);
+                }
+                &__title{
+                    @include font(4.375rem, 700, 1.2, #466684);
+                    font-family: 'Canela Trial';
+                    margin-right: 60px;
+                    display: block;
+                }
+                .specialization-item-info{
+                    @include flex_colomn();
+                    align-items: flex-start;
+                    max-width: 636px;
+                    &__text{
+                        @include font(1.25rem, 300, 1.5, #41424a);
+                        margin-bottom: 30px;
+                    }
+                    &__subtitle{
+                        @include font(1.25rem, 400, 1.5, #e5745d);
+                        border-bottom: 1px solid #e5745d;
+                    }
+                }
+            }
+        }
+    }
+}

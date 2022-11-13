@@ -1,0 +1,124 @@
+@mixin font ($fz, $fw, $lh, $cl) {
+    font-family: 'StyreneAWeb';
+    font-size: $fz;
+    font-weight: $fw;
+    line-height: $lh;
+    color: $cl;
+}
+
+@mixin flex_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex_colomn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin button ($fc, $bc) {
+    @include font(0.875rem, 500, 1, #15403d);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 30px 40px;
+    border: none;
+    background-color: $bc;
+    position: relative;
+    color: $fc;
+}
+@mixin button_after ($borc,$top,$left,$right,$bottom){
+    border-color: $borc;
+    pointer-events: none;
+    position: absolute;
+    bottom: $bottom;
+    left: $left;
+    position: absolute;
+    right: $right;
+    top: $top;
+    border: 1px solid $borc;
+    content: "";
+}
+@mixin button_before ($borc,$top,$left,$right,$bottom) {
+    border-color: $borc;
+    pointer-events: none;
+    position: absolute;
+    bottom: $bottom;
+    left: $left;
+    position: absolute;
+    right: $right;
+    top: $top;
+    border: 1px solid $borc;
+    content: "";
+}
+
+@mixin  background_top {
+    position: absolute;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    width: 430px;
+    height: 80px;
+    top: -80px;
+    right: 0;
+    content: '';
+}
+@mixin  background_top-light {
+    position: absolute;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    width: 430px;
+    height: 80px;
+    top: -80px;
+    content: '';
+    left: 0;
+}
+@mixin background_bottom {
+    position: absolute;
+    display: block;
+    width: 430px;
+    background-size: cover;
+    background-position: center;
+    width: 430px;
+    height: 80px;
+    bottom: -75px;
+    right: 0;
+    z-index: 1;
+    content: '';
+}
+@mixin background_bottom-light {
+    position: absolute;
+    display: block;
+    width: 430px;
+    background-size: cover;
+    background-position: center;
+    width: 430px;
+    height: 80px;
+    bottom: -75px;
+    left: 0;
+    z-index: 1;
+    content: '';
+}
+@mixin link__after{
+    width: 0;
+    z-index: 1;
+    border-bottom: 1px solid;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: .25;
+    position: absolute;
+    transition: width .3s ease-out;
+}
+@mixin link__before{
+    width: 100%;
+    border-bottom: 1px solid;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: .25;
+    position: absolute;
+    transition: width .3s ease-out;
+} 
