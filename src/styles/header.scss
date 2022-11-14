@@ -1,11 +1,11 @@
 @import "mixin.scss";
-
+@import "media_mixin.scss";
 
 .header{
     width: 100%;
     &-block{
         position: relative;
-        height: 125px;
+        // height: 125px;
         width: 100%;
         .header_toptext{
             @include flex_row();
@@ -23,7 +23,6 @@
                     margin-bottom: -10px;
                 }
                 .content-text{
-
                     margin-right: 80px;
                     &__link{
                         @include font(19px, 300, 1.5,inherit);
@@ -39,7 +38,6 @@
             display: flex;
             justify-content: space-between;
             padding: 40px;
-
             .header-navigation__menu{
                 @include flex_row();
                 // position: absolute;
@@ -74,6 +72,23 @@
                     }
                 }
             }
+        }
+    }
+    @include width_768{
+        position: fixed;
+        background-color: #f9f4f1;
+        z-index: 100;
+        .header-block-navigation{
+            padding: 20px;
+            .header-logo__img{
+                height: 40px;
+            }
+        }
+        .header_toptext{
+            display: none;
+        }
+        .header-navigation__menu{
+            display: none;
         }
     }
 }

@@ -1,11 +1,11 @@
 @import "mixin.scss";
-
+@import "media_mixin.scss";
 
 .main-banner{
     margin-top: 60px;
     margin-bottom: 60px;
     @include flex_colomn;
-    width: calc(1400 / 3 * 2);
+    max-width: calc(1400 / 3 * 2);
     &__subtitle{
         @include font(1.25rem, 400, 1.5, #e5745d);
         margin-bottom: 10px;
@@ -22,6 +22,17 @@
             &:hover{
                 color: #e5745d;
             }
+        }
+    }
+    @include width_1065{
+        margin: 30px auto;
+    }
+    @include width_768{
+        &__title{
+            max-width: 83.3%;
+            font-size: 2.5rem;
+            padding-left: 20px;
+            padding-right: 20px;
         }
     }
 }

@@ -1,4 +1,6 @@
 @import "mixin.scss";
+@import "media_mixin.scss";
+
 .footer{
     background-color: #466684;
     padding-right: 30px;
@@ -131,5 +133,41 @@
         .ml-0{
             margin-left: 0;
         }
+        @include width_1065{
+            .footer-info{
+                padding-right: 20px;
+                padding-left: 20px;
+                width: 42%;
+            }
+            .footer-item{
+                padding-right: 20px;
+                padding-left: 20px;
+                &:before{
+                    display: none;
+                }
+                &-title{
+                    position: static;
+                    writing-mode: horizontal-tb;
+                    &__text{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+        @include width_900{
+            flex-direction: column;
+            padding-bottom: 80px;
+            .footer-info{
+                width: 100%;
+            }
+            .footer-item{
+                width: 100%;
+                margin-left: 0;
+                &-info-text{
+                    margin-bottom: 0;
+                }
+            }
+        }
     }
+
 }

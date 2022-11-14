@@ -1,4 +1,5 @@
 @import "mixin.scss";
+@import "media_mixin.scss";
 
 .main-thoughts{
     background-color: #fff;
@@ -13,7 +14,7 @@
         @include flex_row();
         align-items: flex-start;
         &-left{
-            width: 50%;
+            // width: 50%;
             padding-left: 40px;
             padding-right: 40px;
             &__title{
@@ -58,7 +59,7 @@
             }
         }
         &-right{
-            width: 50%;
+            // width: 50%;
             padding-right: 40px;
             padding-left: 40px;
             .content-right-item{
@@ -108,6 +109,75 @@
                     left: 0;
                     position: absolute;
                     right: 0;
+                }
+            }
+        }
+    }
+    @include width_1065{
+        padding: 60px 30px;
+        &-content{
+            flex-direction: column;
+            
+            &-left{
+                padding-left: 20px;
+                padding-right: 20px;
+                align-self: stretch;
+                &__title{
+                    font-size: 3.75rem;
+                }
+                .content-left-card{
+                    &-photo{
+                        display: none;
+                    }
+                }
+                .mr-pd-2{
+                    margin-bottom: 60px;
+                    padding-bottom: 60px;
+                    position: relative;
+                    &::before{
+                        border-bottom: 1px solid #dcccc1;
+                        border-top: 1px solid #dcccc1;
+                        bottom: 0;
+                        box-sizing: border-box;
+                        content: "";
+                        height: 3px;
+                        left: 0;
+                        position: absolute;
+                        right: 0;
+                    }
+                }
+            }
+            &-right{
+                padding-left: 20px;
+                padding-right: 20px;
+                .content-right-item{
+                    &__title{
+                        font-size: 3.75rem;
+                    }
+                }
+            }
+        }
+    }
+    @include width_768{
+        &-content{
+            &-left{
+                &__title{
+                    font-size: 2.5rem;
+                }
+                .mr-pd-2{
+                    margin-bottom: 40px;
+                    padding-bottom: 40px;
+                }
+            }
+            &-right{
+                .content-right-item{
+                    &__title{
+                        font-size: 2.5rem;
+                    }
+                    .mr-pd{
+                        margin-bottom: 40px;
+                        padding-bottom: 40px;
+                    }
                 }
             }
         }

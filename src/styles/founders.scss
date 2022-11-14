@@ -1,4 +1,5 @@
 @import "mixin.scss";
+@import "media_mixin.scss";
 
 .main-founders{
     @include flex_colomn();
@@ -73,6 +74,26 @@
         }
         &:hover::before{
             @include button_before(white,5px,5px,7px,7px);
+        }
+    }
+    @include width_1065{
+        padding-bottom: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
+        &-cards{
+            &-item{
+                padding-left: 20px;
+                padding-right: 20px;
+                max-width: 50%;
+            }
+        }
+    }
+    @include width_768{
+        &-cards{
+            &-item{
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
         }
     }
 }

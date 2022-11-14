@@ -1,4 +1,5 @@
 @import "mixin.scss";
+@import "media_mixin.scss";
 
 .main-specialization{
     background-color: #15403d;
@@ -6,6 +7,7 @@
     @include flex_colomn();
     justify-content: center;
     margin-bottom: 80px;
+    padding-top: 80px;
     &-header{
         @include flex_colomn();
         padding-left: 40px;
@@ -36,7 +38,9 @@
             padding-right: 40px;
             margin-bottom: 40px;
             position: relative;
-            
+            &:last-child{
+                margin-bottom: 0;
+            }
             &-link{
                 @include flex_row;
                 background-color: #fff;
@@ -58,7 +62,7 @@
                 .specialization-item-info{
                     @include flex_colomn();
                     align-items: flex-start;
-                    max-width: 636px;
+                    max-width: 100%;
                     &__text{
                         @include font(1.25rem, 300, 1.5, #41424a);
                         margin-bottom: 30px;
@@ -66,6 +70,51 @@
                     &__subtitle{
                         @include font(1.25rem, 400, 1.5, #e5745d);
                         border-bottom: 1px solid #e5745d;
+                    }
+                }
+            }
+        }
+    }
+    @include width_1065{
+        margin-bottom: 60px;
+        &-header{
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 83.33%;
+            margin: 0 auto 60px auto;
+        }
+        &-cards{
+            align-items: stretch;
+            .specialization-item{
+                &-link{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    &__title{
+                        margin-right: 0;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+    @include width_768{
+        &-header{
+            .main-specialization__title{
+                font-size: 2.5rem;
+            }
+        }
+        &-cards{
+            .specialization-item{
+                &-link{
+                    padding: 60px;
+                    &__title{
+                        font-size: 2.5rem;
+                    }
+                }
+                &-info{
+                    &__text{
+                        font-size: 1.125rem;
                     }
                 }
             }

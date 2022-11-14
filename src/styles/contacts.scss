@@ -1,4 +1,5 @@
 @import "mixin.scss";
+@import "media_mixin.scss";
 
 .main-contacts{
     margin-top: 120px;
@@ -12,20 +13,20 @@
         &__photo{
             padding-right: 120px;
             position: relative;
-            .item-background-top{
+            &:before{
                 @include background_top-light();
                 background-image: url(../images/pink-pattern-top.png);
             }
-            .item-background-bottom{
+            &:after{
                 @include background_bottom-light();
                 background-image: url(../images/green-pattern-bottom.png);
             }
             .item-portrait{
-                background-size: cover;
+                object-fit: cover;
                 height: 550px;
                 position: relative;
                 z-index: 2;
-                width: 401px;
+                // width: 401px;
             }
         }
         &-info{
@@ -117,16 +118,16 @@
             padding-left: 120px;
             position: relative;
             margin-top: -30px;
-            &::before{
+            &:before{
                 @include background_top();
                 background-image: url(../images/blue-pattern-top.png);
             }
-            .dark-background-bottom{
+            &:after{
                 @include background_bottom();
                 background-image: url(../images/pink-pattern-bottom.png);
             }
             .dark-portrait{
-                background-size: cover;
+                object-fit: cover;
                 height: 550px;
                 position: relative;
             }
@@ -189,6 +190,124 @@
                         @include link__before();
                     }
                 }
+            }
+        }
+    }
+    @include width_1065{
+        margin-top: 0;
+        .main-contacts-item{
+            padding-left: 30px;
+            padding-right: 30px;
+            &__photo{
+                padding-right: 60px;
+                padding-left: 20px;
+                &:before{
+                    display: none;
+                }
+                &:after{
+                    display: none;
+                }
+                .item-portrait{
+                    height: 700px;
+                }
+            }
+            &-info{
+                padding-right: 20px;
+                .main-contacts-item__text{
+                    @include font(3rem, 200, 1.2, #15403d);
+                    font-family: 'Canela Trial';
+                }
+                
+            }
+        }
+        .main-contacts-dark{
+            padding-left: 30px;
+            padding-right: 30px;
+            &:after{
+                left: 0;
+            }
+            &__photo{
+                padding-left: 60px;
+                padding-right: 20px;
+                &:before{
+                    display: none;
+                }
+                &:after{
+                    display: none;
+                }
+                .dark-portrait{
+                    height: 700px;
+                }
+            }
+            &-info{
+                padding-left: 20px;
+                .main-contacts-dark__text{
+                    @include font(3rem, 200, 1.2, white);
+                    font-family: 'Canela Trial';
+                }
+            }
+        }
+    }
+    @include width_900{
+        padding-left: 30px;
+        padding-right: 30px;
+        .main-contacts-item{
+            flex-direction: column;
+            padding-right: 0;
+            padding-left: 0;
+            margin-bottom: 120px;
+            &__photo{
+                width: 100%;
+                box-sizing: border-box;
+                padding-right: 20px;
+                padding-left: 20px;
+                .item-portrait{
+                    width: 100%;
+                    z-index: 1;
+                }
+            }
+            &-info{
+                max-width: 100%;
+                padding: 30px 20px 0 20px;
+                position: relative;
+                .item-info__logo{
+                    position: absolute;
+                    content: "";
+                    top: -54px;
+                    left: 20px;
+                    z-index: 2;
+                    bottom: 20px;
+                    padding-top: 20px;
+                    padding-right: 20px;
+                    background-color: #fff;
+                }
+            }
+        }
+        .main-contacts-dark{
+            flex-direction: column;
+            padding-left: 0;
+            padding-right: 0;
+            margin-bottom: 120px;
+            padding-bottom: 0;
+            &:after{
+                left: -30px;
+            }
+            &__photo{
+                order: 1;
+                width: 100%;
+                box-sizing: border-box;
+                padding-right: 20px;
+                padding-left: 20px;
+                .dark-portrait{
+                    width: 100%;
+                }
+            }
+            &-info{
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 30px;
+                order: 2;
+                max-width: 100%;
             }
         }
     }
