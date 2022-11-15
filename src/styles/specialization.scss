@@ -7,16 +7,16 @@
     @include flex_colomn();
     justify-content: center;
     margin-bottom: 80px;
-    padding-top: 80px;
     canvas{
             display: block;
             width: 100%;
             position: absolute;
-            top: -239px;
+            top: -160px;
             height: 160px;
     }
     &-wave {
         position: relative;
+        width: 100vw;
     }
     &-header{
         @include flex_colomn();
