@@ -35,4 +35,9 @@
             padding-right: 20px;
         }
     }
+    @include width_600{
+        &__title{
+            max-width: 100%;
+        }
+    }
 }

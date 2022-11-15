@@ -14,7 +14,7 @@
         @include flex_row();
         align-items: flex-start;
         &-left{
-            // width: 50%;
+            width: 50%;
             padding-left: 40px;
             padding-right: 40px;
             &__title{
@@ -59,7 +59,7 @@
             }
         }
         &-right{
-            // width: 50%;
+            width: 50%;
             padding-right: 40px;
             padding-left: 40px;
             .content-right-item{
@@ -115,10 +115,14 @@
     }
     @include width_1065{
         padding: 60px 30px;
+        &__title{
+            padding-left: 20px;
+        }
         &-content{
             flex-direction: column;
-            
+            padding-right: 30px;
             &-left{
+                width: 100%;
                 padding-left: 20px;
                 padding-right: 20px;
                 align-self: stretch;
@@ -148,6 +152,7 @@
                 }
             }
             &-right{
+                width: 100%;
                 padding-left: 20px;
                 padding-right: 20px;
                 .content-right-item{
@@ -181,5 +186,9 @@
                 }
             }
         }
+    }
+    @include width_600{
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }

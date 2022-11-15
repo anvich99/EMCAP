@@ -111,12 +111,31 @@
                     &__title{
                         font-size: 2.5rem;
                     }
-                }
-                &-info{
-                    &__text{
-                        font-size: 1.125rem;
+                    .specialization-item-info{
+                        &__text{
+                            font-size: 1.125rem;
+                        }
                     }
                 }
+                
+            }
+        }
+    }
+    @include width_600{
+        &-cards{
+            .specialization-item{
+                padding-left: 20px;
+                padding-right: 20px;
+                &-link{
+                    padding: 30px;
+                    &:after{
+                        @include button_after(#e5745d,5px,5px,7px,7px);
+                    }
+                    &:before{
+                        @include button_before(#e5745d,7px,7px,5px,5px);
+                    }
+                }
+                
             }
         }
     }

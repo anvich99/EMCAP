@@ -1,4 +1,9 @@
 @import "mixin.scss";
+@mixin width_1285 {
+    @media (max-width:1285px) {
+        @content;
+    }
+}
 @mixin width_1065 {
     @media (max-width:1065px) {
         @content;
@@ -16,6 +21,26 @@
 }
 @mixin width_768{
     @media (max-width:768px){
+        @content;
+    }
+}
+@mixin width_600 {
+    @media (max-width: 600px){
+        @content;
+    }
+}
+@mixin width_450 {
+    @media (max-width:450px) {
+        @content;
+    }
+}
+@mixin width_400 {
+    @media (max-width:400px) {
+        @content;
+    }
+}
+@mixin width_320 {
+    @media (max-width:320px) {
         @content;
     }
 }

@@ -1,3 +1,8 @@
+@import "mixin.scss";
+@import "media_mixin.scss";
+
+
+
 body,
 h1,
 h2,
@@ -36,4 +41,8 @@ a{
   max-width: 1400px;
   margin: 0 auto;
 }
-
+.main{
+  @include width_768{
+    margin-top: 84px;
+  }
+}
