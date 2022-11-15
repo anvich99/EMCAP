@@ -8,6 +8,16 @@
     justify-content: center;
     margin-bottom: 80px;
     padding-top: 80px;
+    canvas{
+            display: block;
+            width: 100%;
+            position: absolute;
+            top: -239px;
+            height: 160px;
+    }
+    &-wave {
+        position: relative;
+    }
     &-header{
         @include flex_colomn();
         padding-left: 40px;

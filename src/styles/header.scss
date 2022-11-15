@@ -30,7 +30,12 @@
                         text-align: right;
                         position: relative;
                         display: inline-block;
+                        &:after{
+                        text-decoration: wavy;
+                        text-decoration-color: #e5745d;
+                        }
                     }
+                    
                 }
             }
         }
@@ -40,7 +45,7 @@
             padding: 40px;
             .header-navigation__menu{
                 @include flex_row();
-                // position: absolute;
+                // position: absolute;s
                 height: 45px;
                 &-link{
                     margin-right: 20px;
